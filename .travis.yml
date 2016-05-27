@@ -7,6 +7,13 @@ sudo: required
 
 dist: trusty
 
+env:
+  global:
+    # The next declaration is the encrypted COVERITY_SCAN_TOKEN,
+    # created via the "travis encrypt" command using the project repo's
+    #    public key
+    - secure: "EDYFJ+lkPNdPNhCweBs7M/0+4Pig9OU8GTM/5DXU/2EdNbhlwhnw4ViP4zsGLgglUuiOm6tUGDiOmOtShKq2uQ8C6Vfwr2MmM1nrzs3jg3/nD5vJ/wsgz/qDnK73h0EBPsGCjmg/IVY0n099QpRUA/PcXxieYDoKnvoEBKSYmag="
+
 addons:
   apt:
     packages:
@@ -14,6 +21,14 @@ addons:
       - intltool
       - libgirepository1.0-dev
       - libgegl-dev
+  coverity_scan:
+    project:
+      name: "mypaint/libmypaint"
+      description: "MyPaint's brush engine library"
+      notification_email: a.t.chadwick+libmypaint-coverity@gmail.com
+      build_command_prepend: "./autogen.sh && ./configure"
+      build_command: "make"
+      branch_pattern: coverity_scan
 
 script:
     - ./autogen.sh
