@@ -17,19 +17,35 @@ License: ISC, see [COPYING](./COPYING) for details.
 * Most configurations (all except `--disable-introspection --without-glib`):
   - [GObject-Introspection](https://live.gnome.org/GObjectIntrospection)
   - [GLib](https://wiki.gnome.org/Projects/GLib)
-* When building from `git`:
+* When building from `git` (developer package names vary by distribution):
   - [Python](http://python.org/)
   - [autotools](https://en.wikipedia.org/wiki/GNU_Build_System)
   - [intltool](https://freedesktop.org/wiki/Software/intltool/)
+  - [gettext](https://www.gnu.org/software/gettext/gettext.html)
 * For `--enable-gegl` (GIMP *does not* require this):
   - [GEGL + BABL](http://gegl.org/)
+
+### Install dependencies (Debian and derivatives)
 
 On recent Debian-like systems, you can type the following
 to get started with a standard configuration:
 
-    $ sudo apt install build-essential
-    $ sudo apt install libjson-c-dev libgirepository1.0-dev libglib2.0-dev
-    $ sudo apt install python2 autotools intltool    # Building from git
+    $ sudo apt install -y build-essential
+    $ sudo apt install -y libjson-c-dev libgirepository1.0-dev libglib2.0-dev
+
+When building from git:
+
+    $ sudo apt install -y python2.7 autotools-dev intltool gettext libtool
+
+### Install dependencies (Red Hat and derivatives)
+
+The following works on a minimal CentOS 7 installation:
+
+    # yum install -y gcc gobject-introspection-devel json-c-devel glib2-devel
+
+When building from git, you'll want to add:
+
+    # yum install -y git python autoconf intltool gettext libtool
 
 ## Build and install
 
@@ -38,12 +54,15 @@ The traditional setup works just fine.
     $ ./autogen.sh    # Only needed when building from git.
     $ ./configure
     $ make install
+    $ sudo ldconfig
 
 ### Maintainer mode
 
 We don't ship a `configure` script in our git repository. If you're
 building from git, you have to kickstart the build environment with:
 
+    $ git clone https://github.com/mypaint/libmypaint.git
+    $ cd libmypaint
     $ ./autogen.sh
 
 This script generates `configure` from `configure.ac`, after running a
@@ -80,6 +99,17 @@ This runs all the unit tests.
     $ make install
 
 Uninstall libmypaint with `make uninstall`.
+
+### Check availability
+
+Make sure that pkg-config can see libmypaint before trying to build with it.
+
+    $ pkg-config --list-all | grep -i mypaint
+
+If it's not found, you'll need to add the relevant pkgconfig directory to
+the `pkg-config` search path. For example, on CentOS, with a default install:
+
+    $ echo PKG_CONFIG_PATH=/usr/local/lib/pkgconfig >>/etc/environment
 
 ## Contributing
 

@@ -5,10 +5,10 @@
 #include "utils.h" /* Not public API, just used for write_ppm to demonstrate */
 
 void
-stroke_to(MyPaintBrush *brush, MyPaintSurface *surf, float x, float y)
+stroke_to(MyPaintBrush *brush, MyPaintSurface *surf, float x, float y, float viewzoom, float viewrotation)
 {
     float pressure = 1.0, ytilt = 0.0, xtilt = 0.0, dtime = 1.0/10;
-    mypaint_brush_stroke_to(brush, surf, x, y, pressure, xtilt, ytilt, dtime);
+    mypaint_brush_stroke_to(brush, surf, x, y, pressure, xtilt, ytilt, dtime, viewzoom, viewrotation);
 }
 
 int
@@ -24,11 +24,11 @@ main(int argc, char argv[]) {
 
     /* Draw a rectangle on surface with brush */
     mypaint_surface_begin_atomic((MyPaintSurface *)surface);
-    stroke_to(brush, (MyPaintSurface *)surface, 0.0, 0.0);
-    stroke_to(brush, (MyPaintSurface *)surface, 200.0, 0.0);
-    stroke_to(brush, (MyPaintSurface *)surface, 200.0, 200.0);
-    stroke_to(brush, (MyPaintSurface *)surface, 0.0, 200.0);
-    stroke_to(brush, (MyPaintSurface *)surface, 0.0, 0.0);
+    stroke_to(brush, (MyPaintSurface *)surface, 0.0, 0.0, 1.0, 0.0);
+    stroke_to(brush, (MyPaintSurface *)surface, 200.0, 0.0, 1.0, 0.0);
+    stroke_to(brush, (MyPaintSurface *)surface, 200.0, 200.0, 1.0, 0.0);
+    stroke_to(brush, (MyPaintSurface *)surface, 0.0, 200.0, 1.0, 0.0);
+    stroke_to(brush, (MyPaintSurface *)surface, 0.0, 0.0, 1.0, 0.0);
     MyPaintRectangle roi;
     mypaint_surface_end_atomic((MyPaintSurface *)surface, &roi);
 

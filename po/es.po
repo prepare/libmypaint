@@ -1,24 +1,25 @@
 # MyPaint
-# Copyright (C) 2009 Martin Renold, Ilya Portnov
+# Copyright (C) 2015 Andrew Chadwick
 # This file is distributed under the same license as the MyPaint package.
-# Martin Renold <martinxyz@gmx.ch> 2009
-# Manuel Quiñones <manuq@laptop.org>, 2011, 2012.
+# Andrew Chadwick <a.t.chadwick@gmail.com> 2015
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: MyPaint 0.7.1+git\n"
+"Project-Id-Version: mypaint 1.2.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-04 18:33+0100\n"
-"PO-Revision-Date: 2015-07-11 22:37+0200\n"
-"Last-Translator: David Gámiz Jiménez <david.gamiz@gmail.com>\n"
+"PO-Revision-Date: 2017-03-07 18:18+0000\n"
+"Last-Translator: Manuel Quinones <manuel.por.aca@gmail.com>\n"
 "Language-Team: Spanish "
 "<https://hosted.weblate.org/projects/mypaint/libmypaint/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bits\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.4-dev\n"
+"X-Generator: Weblate 2.12\n"
+"X-Language: en_GB\n"
+"X-Source-Language: C\n"
 
 #: ../brushsettings-gen.h:4
 msgid "Opacity"
@@ -29,12 +30,12 @@ msgid ""
 "0 means brush is transparent, 1 fully visible\n"
 "(also known as alpha or opacity)"
 msgstr ""
-"0 significa que el trazo es transparente, 1 que es completamente visible\n"
-"(también conocido como alfa u opacidad)"
+"0 significa que el pincel es transparente, 1 totalmente visible\n"
+"(También conocido como alfa u opacidad)"
 
 #: ../brushsettings-gen.h:5
 msgid "Opacity multiply"
-msgstr "Multiplicar opacidad"
+msgstr "Múltiplo de opacidad"
 
 #: ../brushsettings-gen.h:5
 msgid ""
@@ -43,15 +44,15 @@ msgid ""
 "This setting is responsible to stop painting when there is zero pressure. "
 "This is just a convention, the behaviour is identical to 'opaque'."
 msgstr ""
-"Se multiplica por la opacidad. Sólo debería cambiar la entrada de presión "
-"para este ajuste. Use 'opacidad' en cambio para hacer que la opacidad "
-"dependa de la velocidad.\n"
-"Este ajuste determina el que se detenga el pintado cuando hay presión cero.  "
-"Es sólo una convención, el comportamiento es idéntico a 'opacidad'."
+"Se multiplica con opaco. Sólo debe cambiar la presión de entrada de este "
+"ajuste. En cambio, utilice \"opaco\" para que la opacidad dependa de la "
+"velocidad.\n"
+"Este ajuste es responsable de dejar de pintar cuando no hay presión. Es sólo "
+"una convención, el comportamiento es idéntico a 'opaco'."
 
 #: ../brushsettings-gen.h:6
 msgid "Opacity linearize"
-msgstr "Linealizar opacidad"
+msgstr "Linearizar opacidad"
 
 #: ../brushsettings-gen.h:6
 msgid ""
@@ -64,16 +65,16 @@ msgid ""
 "1.0 the opaque value above is for the final brush stroke, assuming each "
 "pixel gets (dabs_per_radius*2) brushdabs on average during a stroke"
 msgstr ""
-"Corrige la no linealidad introducida al mezclar varias pinceladas, una sobre "
-"otra. Esta corrección debería proporcionar una respuesta a la presión más "
-"lineal (\"natural\") cuando la presión es mapeada a multiplicar_opacidad, "
-"como se hace frecuentemente. 0.9 está bien para las brochas estándar. Ponga "
-"un valor más pequeño si la brocha tiene mucho temblequeo, o más alto si se "
-"usa pinceladas_por_segundo.\n"
-"0.0 el valor de opacidad de arriba se usa para las pinceladas individuales\n"
-"1.0 el valor de opacidad de arriba se usa para el trazo de brocha final, "
-"asume que cada píxel tiene (pinceladas_por_radio*2) pinceladas en promedio "
-"por cada trazo"
+"Corrija la no linealidad introducida mezclando varios centros uno encima del "
+"otro. Esta corrección debe obtener una respuesta de presión lineal "
+"( \"natural\") cuando la presión se mapea opaque_multiply, como suele "
+"hacerse. 0.9 es bueno para los trazos estándar, establezca un tamaño más "
+"pequeño si el pincel se dispersa mucho o más alto si utiliza "
+"dabs_per_second.\n"
+"0,0 el valor opaco anterior es para los centros individuales\n"
+"1.0 el valor opaco anterior es para el trazo de pincel final, suponiendo que "
+"cada píxel obtiene (dabs_per_radius * 2) pinceladas en promedio durante un "
+"golpe"
 
 #: ../brushsettings-gen.h:7
 msgid "Radius"
@@ -85,9 +86,9 @@ msgid ""
 " 0.7 means 2 pixels\n"
 " 3.0 means 20 pixels"
 msgstr ""
-"Radio base del pincel (logarítmico)\n"
-" 0.7 significa 2 píxeles\n"
-" 3.0 significa 20 píxeles"
+"Radio de pincel básico (logarítmico)\n"
+"  0,7 significa 2 píxeles\n"
+"  3,0 significa 20 píxeles"
 
 #: ../brushsettings-gen.h:8
 msgid "Hardness"
@@ -457,7 +458,7 @@ msgstr ""
 
 #: ../brushsettings-gen.h:35
 msgid "Smudge radius"
-msgstr "Radio del difuminado"
+msgstr "Radio de manchas"
 
 #: ../brushsettings-gen.h:35
 msgid ""
@@ -477,7 +478,7 @@ msgstr ""
 
 #: ../brushsettings-gen.h:36
 msgid "Eraser"
-msgstr "Goma de borrar"
+msgstr "Borrador"
 
 #: ../brushsettings-gen.h:36
 msgid ""
@@ -486,14 +487,14 @@ msgid ""
 " 1.0 standard eraser\n"
 " 0.5 pixels go towards 50% transparency"
 msgstr ""
-"Qué tanto se comporta esta herramienta como una goma de borrar\n"
-" 0.0 pinta normalmente\n"
-" 1.0 goma de borrar estándar\n"
-" 0.5 los píxeles se llevan a un 50% de transparencia"
+"Con cuánto esta herramienta se comporta como un borrador\n"
+"  0.0 pintura normal\n"
+"  1.0 borrador estándar\n"
+"  0.5 píxeles van hacia 50% de transparencia"
 
 #: ../brushsettings-gen.h:37
 msgid "Stroke threshold"
-msgstr "Umbral del trazo"
+msgstr "Umbral de trazado"
 
 #: ../brushsettings-gen.h:37
 msgid ""
@@ -506,19 +507,19 @@ msgstr ""
 
 #: ../brushsettings-gen.h:38
 msgid "Stroke duration"
-msgstr "Duración del trazo"
+msgstr "Duración del trazado"
 
 #: ../brushsettings-gen.h:38
 msgid ""
 "How far you have to move until the stroke input reaches 1.0. This value is "
 "logarithmic (negative values will not invert the process)."
 msgstr ""
-"Hasta dónde debe moverse para que la entrada del trazo alcance 1.0. Este "
-"valor es logarítmico (valores negativos no invierten el proceso)."
+"Distancia que se debe mover para que la entrada de la brocha alcance 1.0. "
+"Este valor es logarítmico (los números negativos no invierten el proceso)."
 
 #: ../brushsettings-gen.h:39
 msgid "Stroke hold time"
-msgstr "Tiempo en que se mantiene el trazo"
+msgstr "Tiempo de retención de trazado"
 
 #: ../brushsettings-gen.h:39
 msgid ""
@@ -528,11 +529,10 @@ msgid ""
 "2.0 means twice as long as it takes to go from 0.0 to 1.0\n"
 "9.9 or higher stands for infinite"
 msgstr ""
-"Define por cuánto tiempo la entrada del trazo se mantiene en 1.0. Después de "
-"esto se vuelve a 0.0 y comienza a crecer nuevamente, incluso si el trazo no "
-"se ha finalizado.\n"
-"2.0 significa dos veces lo que le toma ir de 0.0 a 1.0\n"
-"9.9 o más se corresponde a un valor infinito"
+"Qué tanto se comporta esta herramienta como una goma de borrar\n"
+" 0.0 pinta normalmente\n"
+" 1.0 goma de borrar estándar\n"
+" 0.5 los píxeles se llevan a un 50% de transparencia"
 
 #: ../brushsettings-gen.h:40
 msgid "Custom input"
@@ -548,16 +548,17 @@ msgid ""
 "If you make it change 'by random' you can generate a slow (smooth) random "
 "input."
 msgstr ""
-"Pone la entrada personalizada en este valor. Si se reduce, lo lleva hacia "
-"este valor (ver más abajo). La idea es que este valor dependa de una mixtura "
-"de presión, velocidad, lo que sea, y luego hacer que otra propiedad dependa "
-"de ésta, en vez de repetir la combinación en cada lugar que se necesite.\n"
-"Si la hace cambiar 'por aleatorio' puede generar una entrada aleatoria lenta "
-"(suave)."
+"Fija el valor personalizado de esta entrada. Si se disminuye, se acerca a "
+"este valor (ver abajo). La idea es que esta entrada depende de una "
+"combinación: presión, velocidad o cualquier otra cosa. Y luego hace que "
+"otros ajustes dependan de esta \"entrada personalizada\" en vez de repetir "
+"dicha combinación cada vez que se necesite.\n"
+"Si se hace cambiar aleatoriamente, se puede generar una entrada aleatoria "
+"lenta (suave)."
 
 #: ../brushsettings-gen.h:41
 msgid "Custom input filter"
-msgstr "Filtro personalizado de entrada"
+msgstr "Filtro de entrada personalizado"
 
 #: ../brushsettings-gen.h:41
 msgid ""
@@ -602,19 +603,19 @@ msgstr ""
 
 #: ../brushsettings-gen.h:44
 msgid "Direction filter"
-msgstr "Filtro dirección"
+msgstr "Dirección del filtro"
 
 #: ../brushsettings-gen.h:44
 msgid ""
 "A low value will make the direction input adapt more quickly, a high value "
 "will make it smoother"
 msgstr ""
-"Un valor bajo hace que la entrada de dirección se adapte más rápidamente. Un "
-"valor alto hace que se adapte con más suavidad"
+"Un valor bajo hará que la entrada de dirección se adapte más rápidamente, un "
+"valor alto lo hará más suave"
 
 #: ../brushsettings-gen.h:45
 msgid "Lock alpha"
-msgstr "Bloquear alfa"
+msgstr "Bloquear alpha"
 
 #: ../brushsettings-gen.h:45
 msgid ""
@@ -643,15 +644,15 @@ msgstr ""
 
 #: ../brushsettings-gen.h:47
 msgid "Snap to pixel"
-msgstr "Ajustar a píxeles"
+msgstr "Ajustar a píxel"
 
 #: ../brushsettings-gen.h:47
 msgid ""
 "Snap brush dab's center and its radius to pixels. Set this to 1.0 for a thin "
 "pixel brush."
 msgstr ""
-"Ajusta el centro de la brocha y su radio a los píxeles. Asigne 1.0 para "
-"obtener una brocha fina de 1 píxel."
+"Coloque el centro del pincel y su radio en píxeles. Establezca esto en 1.0 "
+"para un pincel de píxeles delgados."
 
 #: ../brushsettings-gen.h:48
 msgid "Pressure gain"
@@ -662,7 +663,7 @@ msgid ""
 "This changes how hard you have to press. It multiplies tablet pressure by a "
 "constant factor."
 msgstr ""
-"Modifica qué tan fuerte se tiene que presionar. Multiplica la presión de la "
+"Esto cambia lo difícil que tiene que presionar. Multiplica la presión de la "
 "tableta por un factor constante."
 
 #: ../brushsettings-gen.h:53
@@ -696,7 +697,7 @@ msgstr ""
 
 #: ../brushsettings-gen.h:55
 msgid "Gross speed"
-msgstr "Velocidad gruesa"
+msgstr "Velocidad bruta"
 
 #: ../brushsettings-gen.h:55
 msgid ""
@@ -720,7 +721,7 @@ msgstr ""
 
 #: ../brushsettings-gen.h:57
 msgid "Stroke"
-msgstr "Pincelada"
+msgstr "Trazo"
 
 #: ../brushsettings-gen.h:57
 msgid ""
@@ -742,24 +743,24 @@ msgid ""
 "The angle of the stroke, in degrees. The value will stay between 0.0 and "
 "180.0, effectively ignoring turns of 180 degrees."
 msgstr ""
-"El ángulo del trazo, en grados. El valor permanecerá entre 0.0 y 180.0, "
-"ignorando efectivamente vueltas de 180 grados."
+"El ángulo del trazado, en grados. El valor se mantendrá entre 0,0 y 180,0, "
+"haciendo caso omiso de giros de 180 grados."
 
 #: ../brushsettings-gen.h:59
 msgid "Declination"
-msgstr "Inclinación"
+msgstr "Declinación"
 
 #: ../brushsettings-gen.h:59
 msgid ""
 "Declination of stylus tilt. 0 when stylus is parallel to tablet and 90.0 "
 "when it's perpendicular to tablet."
 msgstr ""
-"Inclinación del lápiz. Es 0 cuando el lápiz está paralelo a la tableta, y "
-"90.0 cuando está perpendicular."
+"Declinación de la inclinación del lápiz óptico. 0 cuando el lápiz es "
+"paralelo a la tableta y 90.0 cuando es perpendicular a la tableta."
 
 #: ../brushsettings-gen.h:60
 msgid "Ascension"
-msgstr "Ascenso"
+msgstr "Ascensión"
 
 #: ../brushsettings-gen.h:60
 msgid ""
@@ -767,9 +768,10 @@ msgid ""
 "when rotated 90 degrees clockwise, -90 when rotated 90 degrees "
 "counterclockwise."
 msgstr ""
-"Ascensión recta del lápiz. Es 0 cuando la punta activa apunta hacia Ud, +90 "
-"cuando el lápiz se rota 90 grados en sentido horario, y -90 cuando se rota "
-"90 grados en sentido antihorario."
+"Ascensión recta de la inclinación del lápiz óptico. 0 cuando el puntero de "
+"trabajo del estilete apunta a usted, +90 cuando se gira 90 grados en el "
+"sentido de las agujas del reloj, -90 cuando se gira 90 grados en sentido "
+"antihorario."
 
 #: ../brushsettings-gen.h:61
 msgid "Custom"
@@ -779,8 +781,5 @@ msgstr "Personalizado"
 msgid ""
 "This is a user defined input. Look at the 'custom input' setting for details."
 msgstr ""
-"Esta es una entrada definida por el usuario. Vea la propiedad 'entrada "
-"personalizada' para más detalles."
-
-#~ msgid "Anti-aliasing"
-#~ msgstr "Anti-aliasing"
+"Esta es una entrada definida por el usuario. Consulte la configuración de "
+"\"entrada personalizada\" para obtener más información."
